@@ -58,6 +58,7 @@
 				macBlueIndex: 0,
 				isSearchShow: false,
 				isGetShow: true,
+				connected: 0,
 			}
 		},
 		computed: {
@@ -65,7 +66,36 @@
 			showskg() {
 				return this.macValue;
 			}
-		},
+		},onLoad(){
+			//蓝牙是否在扫描设备
+			uni.onBluetoothAdapterStateChange((res)=>{
+				 console.log("蓝牙"+(res.discovering ? "开启":"关闭")+"搜索")
+				 this.discovering = res.discovering;
+			})
+			//监听扫描到的蓝牙设备
+			uni.onBluetoothDeviceFound(resd=>{
+				//在这里识别你要用到的设备；
+				const devices = resd.devices;
+			})		
+			//监听蓝牙连接状态
+			uni.onBLEConnectionStateChange(res=>{
+				console.log(`设备 ${res.deviceId},connected: ${res.connected}`)
+				this.Connecting = res.connected;
+				if(res.connected == false){
+					this.closeBluetoothAdapter();
+					this.closeBLEConnection(res.deviceId,0);
+					this.connected = 1;	
+					if (this.connected == 1) {
+						//选择适合需求的定时器
+						this.timer = setTimeout(() => {
+							this.getBlueInfo()
+						}, 1000)
+					}
+				}else{
+				   this.connected = 0;	
+				}
+				this.deviceId = res.deviceId;
+			})},
 		onShow() {
 			//console.log("blueName",this.blueName)
 			console.log('ENTER TO')
@@ -123,7 +153,6 @@
 					},
 					fail(err) {
 						console.log('错误信息', JSON.stringify(err))
-
 						uni.showToast({
 							title: '蓝牙未初始化',
 							icon: 'none',
@@ -162,7 +191,7 @@
 						}
 						
 						_this.bluetooth = res.devices.filter(item => {
-							console.log('获取已发现的蓝牙设备-名称', item.name)
+							//console.log('获取已发现的蓝牙设备-名称', item.name)
 							if (item.name == _this.macBlueName) {
 								console.log('获取已发现的蓝牙设备-deviceId', item.deviceId)
 								_macBlueDeviceId = item.deviceId
@@ -180,8 +209,7 @@
 							}
 							i++;
 						})
-
-						console.log('获取已发现的蓝牙设备-_macBlueDeviceId', _macBlueIndex)
+						//console.log('获取已发现的蓝牙设备-_macBlueDeviceId', _macBlueIndex)
 						if (isAuto) {
 							//连接蓝牙
 							_this.createBLEConnection(_macBlueDeviceId, _macBlueIndex)
@@ -366,7 +394,6 @@
 
 					let resValue = _this.hexCharCodeToStr(val)
 					_this.macValue = resValue
-							
 				    //console.log('macName',res)
 					//console.log('千克',resValue)
 					//console.log("蓝牙电子秤",this.macBlueDeviceId)
