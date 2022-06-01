@@ -1,0 +1,96 @@
+{
+	"pages": [
+		// pages数组中第一项表示应用启动页
+		{
+			"path": "pages/Electronic/bluetooth/bluescale",
+			"style": {
+				"navigationBarTitleText": "电子分货系统",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"text": "\ue534",
+							"fontSrc": "/static/uni.ttf",
+							"fontSize": "22px",
+							"color": "#FFFFFF"
+						}]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/Electronic/bluetooth/bluescale",
+			"style": {}
+		},
+		// #ifdef APP-PLUS || H5
+		{
+			"path": "pages/Electronic/bluetooth/bluescale",
+			"style": {}
+		}
+		// #endif
+	],
+	"subPackages": [{
+			"root": "pages/Electronic",
+			"pages": [
+				// #ifndef MP-ALIPAY
+				{
+					"path": "bluetooth/bluescale",
+					"style": {
+						"navigationBarTitleText": "bluescale"
+					}
+				},
+				// #endif
+				{
+					"path": "bluetooth/bluescale",
+					"style": {
+						"navigationBarTitleText": "bluescale"
+					}
+				}
+			]
+		}
+	],
+	"globalStyle": {
+		"pageOrientation": "portrait",
+		"navigationBarTitleText": "vue.electronic",
+		"navigationBarTextStyle": "white",
+		"navigationBarBackgroundColor": "#007AFF",
+		"backgroundColor": "#F8F8F8",
+		"backgroundColorTop": "#F4F5F6",
+		"backgroundColorBottom": "#F4F5F6",
+		"navigationStyle": "custom",
+	   "rpxCalcMaxDeviceWidth": 1024, // rpx 计算所支持的最大设备宽度，单位 px，默认值为 960
+	   "rpxCalcBaseDeviceWidth": 375, // rpx 计算使用的基准设备宽度，设备实际宽度超出 rpx 计算所支持的最大设备宽度时将按基准宽度计算，单位 px，默认值为 375
+	   "rpxCalcIncludeWidth": 750, // rpx 计算特殊处理的值，始终按实际的设备宽度计算，单位 rpx，默认值为 750
+		"mp-360": {
+			"navigationStyle": "custom"
+		},
+		"h5": {
+			"maxWidth": 1190,
+			"navigationBarTextStyle": "black",
+			"navigationBarBackgroundColor": "#F1F1F1"
+		}
+
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/tabBar/Electronic/Electronic",
+				//"iconPath": "static/api.png",
+				//"selectedIconPath": "static/apiHL.png",
+				"text": "电子分货系统"
+			}
+		]
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "", //模式名称
+				"path": "", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
+			}
+		]
+	}
+}

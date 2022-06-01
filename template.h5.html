@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>
+			<%= htmlWebpackPlugin.options.title %>
+		</title>
+		<!-- 正式发布的时候使用，开发期间不启用。↓ -->
+        <!-- <script src="/h5/touch-emulator.js"></script>
+		<script>
+            TouchEmulator();
+			if (document.documentElement.clientWidth > 1024) {
+				window.location.href = '/h5/pcguide.html#'+location.pathname+location.search;
+			}
+		</script>
+        <style>
+            ::-webkit-scrollbar{
+                display: none;
+            }
+        </style>
+        <script>
+            var _hmt = _hmt || [];
+            (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?";// 百度统计key
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script> -->
+        <!-- 正式发布的时候使用，开发期间不启用。↑ -->
+		<script>
+			// document.addEventListener('DOMContentLoaded', function() {
+			// 	document.documentElement.style.fontSize = document.documentElement.clientWidth / 20 + 'px'
+			// })
+		</script>
+		<link rel="stylesheet" href="<%= BASE_URL %>static/index.<%= VUE_APP_INDEX_CSS_HASH %>.css" />
+	</head>
+	<body>
+		<!-- 该文件为 H5 平台的模板 HTML，并非应用入口。 -->
+		<!-- 请勿在此文件编写页面代码或直接运行此文件。 -->
+		<!-- 详见文档：https://uniapp.dcloud.io/collocation/manifest?id=h5-template -->
+		<noscript>
+			<strong>Please enable JavaScript to continue.</strong>
+		</noscript>
+		<div id="app"></div>
+		<!-- built files will be auto injected -->
+		<script>
+			/*BAIDU_STAT*/
+		</script>
+	
+        <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.js"></script> -->
+		<script> 
+			//debugger;
+
+			// if (window.WebSocket) {
+			// 	ws = new WebSocket("ws://192.168.0.102:8000/");
+			// 	ws.onopen = function() {
+			// 		console.log("客户端连接成功")
+			// 		closeConn();
+			// 	};
+			// 	ws.onclose = function() {
+			// 		// 清除心跳任务
+			// 		clearInterval(sendHeardTime);
+			// 		console.log("客户端断开连接")
+			// 	};
+			// 	ws.onmessage = function(resp) {
+			// 		//debugger;
+			// 		var data = resp.data;
+			// 		console.log("接收到消息: " + data)
+			// 		if (resp.data == "heard") {
+			// 			console.info(data);
+			// 			// 清除定时关闭的连接
+			// 			clearTimeout(closeConnTime);
+			// 			closeConn();
+			// 			return;
+			// 		}
+			// 	};
+			// } else {
+			// 	alert("不支持websocket");
+			// }
+
+			// function sendMsg() {
+			// 	var msg = "你好啊";
+			// 	ws.send(msg);
+			// 	console.log("发送消息: " + msg)
+			// }
+			// // 5s发送一个心跳
+			// var sendHeardTime;
+
+			// function sendHeard() {
+			// 	sendHeardTime = setInterval(function() {
+			// 		ws.send("heard");
+			// 	}, 5000);
+			// }
+			// var closeConnTime;
+			// // 关闭连接
+			// function closeConn() {
+			// 	closeConnTime = setTimeout(function() {
+			// 		ws.close();
+			// 	}, 10000);
+			// }
+
+			// var socket = io.connect('ws://192.168.0.102:8000/');
+			// socket.on('connect', function() {
+			// 	socket.emit('connected');
+			// });
+
+			// socket.emit('send', {
+			// 	name: 'zs'
+			// })
+
+			// //接受发送过来的数据
+			// socket.on('send', data => {
+			// 	console.log(data)
+			// })	
+		</script>  
+		
+	</body>
+</html>
