@@ -19,10 +19,11 @@ const store = createStore({
 		colorList: ['#FF0000', '#00FF00', '#0000FF'],
 		noMatchLeftWindow: true,
 		active: 'componentPage',
-		leftWinActive: '/pages/component/view/view',
+		leftWinActive: '/pages/Electronic/websocket/websocket',
 		activeOpen: '',
 		menu: [],
-		univerifyErrorMsg: ''
+		univerifyErrorMsg: '',
+		blueName: '',
 	},
 	mutations: {
 		login(state, provider) {
@@ -71,7 +72,10 @@ const store = createStore({
 	getters: {
 		currentColor(state) {
 			return state.colorList[state.colorIndex]
-		}
+		},
+		currentBlueName(state) {
+			return state.blueName
+		},
 	},
 	actions: {
 		// lazy loading openid

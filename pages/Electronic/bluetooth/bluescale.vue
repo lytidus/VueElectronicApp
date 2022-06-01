@@ -31,6 +31,11 @@
 </template>
 
 <script>
+	import {
+	    mapState,
+	    mapGetters,
+	    mapMutations
+	} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -56,11 +61,13 @@
 			}
 		},
 		computed: {
+            ...mapState(['blueName']),
 			showskg() {
 				return this.macValue;
 			}
 		},
 		onShow() {
+			//console.log("blueName",this.blueName)
 			console.log('ENTER TO')
 			this.getBlueInfo()
 		},
@@ -109,8 +116,9 @@
 							console.log('蓝牙名称', res.devices[0].deviceId)
 							if (res.devices[0].name == _this.macBlueName) {
 								console.log(JSON.stringify(res))
-								_this.getBluetoothDevices();
+                                uni.setStorageSync(res.devices[0].name, res);
 							}
+							_this.getBluetoothDevices();
 						})
 					},
 					fail(err) {
@@ -145,7 +153,14 @@
 						var _macBlueDeviceId = "";
 						var _macBlueIndex = 0;
 						console.log(' 已发现的蓝牙设备', res)
+						
 						// _this.stopBluetoothDevicesDiscovery()
+						if(this.macBlueName != null && this.macBlueName != '')
+						{
+						   console.log("蓝牙缓存",key)
+						   let key = uni.getStorageSync(this.macBlueName);
+						}
+						
 						_this.bluetooth = res.devices.filter(item => {
 							console.log('获取已发现的蓝牙设备-名称', item.name)
 							if (item.name == _this.macBlueName) {
@@ -351,8 +366,10 @@
 
 					let resValue = _this.hexCharCodeToStr(val)
 					_this.macValue = resValue
-				    console.log('macName',res)
-					console.log('千克',resValue)
+							
+				    //console.log('macName',res)
+					//console.log('千克',resValue)
+					//console.log("蓝牙电子秤",this.macBlueDeviceId)
 				})
 			},
 			// 读取设备二进制数据
