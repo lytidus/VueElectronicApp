@@ -1,21 +1,21 @@
 {
-	"electronic-app-version": {
+	"ElectronicApp-version": {
 		"data": [{
-			"_id": "835a9e00-becf-4f75-b534-f818deb26217",
+			"_id": "835a9e00-becf-4f75-b534-f818deb26218",
 			"appid": "__UNI__7170D00",
-			"name": "Electronic",
+			"name": "ElectronicApp",
 			"android": {
-				"note": "电子显示屏新版更新\n分货系统专属\n版本号:1.0.21",
-				"title": "Electronic-app更新",
-				"url": "http://139.9.122.101:18083/downfile/electronic.apk",
-				"version": "1.0.21"
+				"note": "电子显示屏新版更新\n分货系统专属\n版本号:1.0.22",
+				"title": "ElectronicApp更新",
+				"url": "http://139.9.122.101:18083/downfile/ElectronicApp.apk",
+				"version": "1.0.22"
 			}
 			,
 			"ios": { 
-				"note": "电子显示屏新版更新\n分货系统专属\n版本号:1.0.21",
-				"title": "Electronic-app更新",
+				"note": "电子显示屏新版更新\n分货系统专属\n版本号:1.0.22",
+				"title": "ElectronicApp更新",
 				"url": "https://itunes.apple.com/cn/app/hello-uni-app/id1417078253?mt=8",
-				"version": "1.0.21"
+				"version": "1.0.22"
 			}
 		}]
 	}

@@ -1,9 +1,9 @@
 {
-    "name" : "Electronic",
+    "name" : "ElectronicApp",
     "appid" : "__UNI__7170D00",
     "description" : "应用描述",
-    "versionName" : "1.0.21",
-    "versionCode" : 121,
+    "versionName" : "1.0.22",
+    "versionCode" : 122,
     "transformPx" : false,
     "app-plus" : {
         "usingComponents" : false,
@@ -65,7 +65,8 @@
             },
             "ios" : {
                 "UIBackgroundModes" : [ "audio" ],
-                "urlschemewhitelist" : [ "baidumap", "iosamap" ]
+                "urlschemewhitelist" : [ "baidumap", "iosamap" ],
+                "dSYMs" : false
             },
             "sdkConfigs" : {
                 "speech" : {
@@ -76,7 +77,7 @@
             "orientation" : [ "portrait-primary" ],
             "icons" : {
                 "android" : {
-                    "hdpi" : "D:/002_NewProject/vue电子屏展示/iOS_85x72.png"
+                    "hdpi" : "D:/002_NewProject/vue电子屏展示/app_85x72.png"
                 }
             }
         },

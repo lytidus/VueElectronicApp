@@ -8,6 +8,19 @@
 	import checkUpdate from '@/uni_modules/uni-upgrade-center-app/utils/check-update';
 
 	export default {
+		globalData: {
+			appid: 'keengee',
+			kquser: "CSKQ",
+			brand: "KG",
+			store: {
+				GSID: "",
+				KHID: "",
+				POSID: "",
+				KCDID: "",
+				DPID: "",
+			},
+			connecturl:"ws://192.168.0.132:8000", //websocket服务地址
+		},
 		onLaunch: function() {
 			// #ifdef APP-PLUS
 			plus.screen.lockOrientation('landscape-primary'); //锁定横屏 
