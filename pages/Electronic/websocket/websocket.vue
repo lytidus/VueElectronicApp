@@ -28,7 +28,6 @@
 				timer: null,
 				heartbeatInterval: null, //检测服务器端是否还活着
 				reconnectTimeOut: null, //重连之后多久再次重连
-				connecturl:'ws://192.168.0.102:8000', //websocket服务地址
 				spname: '',
 				spqty: '',
 			}
@@ -88,7 +87,7 @@
 				this.connecting = true
 				console.log('连接中')
 				uni.connectSocket({
-					url: this.connecturl,
+					url: getApp().globalData.connecturl,
 					data() {
 						return {
 							msg: '连接成功'

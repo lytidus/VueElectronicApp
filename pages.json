@@ -2,7 +2,7 @@
 	"pages": [
 		// pages数组中第一项表示应用启动页
 		{
-			"path": "pages/Electronic/bluetooth/bluescale",
+			"path": "pages/Electronic/websocket/websocket",
 			"style": {
 				"navigationBarTitleText": "电子分货系统",
 				"app-plus": {
@@ -18,12 +18,12 @@
 			}
 		},
 		{
-			"path": "pages/Electronic/bluetooth/bluescale",
+			"path": "pages/Electronic/websocket/websocket",
 			"style": {}
 		},
 		// #ifdef APP-PLUS || H5
 		{
-			"path": "pages/Electronic/bluetooth/bluescale",
+			"path": "pages/Electronic/websocket/websocket",
 			"style": {}
 		}
 		// #endif
@@ -31,18 +31,10 @@
 	"subPackages": [{
 			"root": "pages/Electronic",
 			"pages": [
-				// #ifndef MP-ALIPAY
 				{
-					"path": "bluetooth/bluescale",
+					"path": "websocket/websocket",
 					"style": {
-						"navigationBarTitleText": "bluescale"
-					}
-				},
-				// #endif
-				{
-					"path": "bluetooth/bluescale",
-					"style": {
-						"navigationBarTitleText": "bluescale"
+						"navigationBarTitleText": "websocket"
 					}
 				}
 			]
@@ -75,10 +67,9 @@
 		"selectedColor": "#007AFF",
 		"borderStyle": "black",
 		"backgroundColor": "#F8F8F8",
-		"list": [{
-				"pagePath": "pages/tabBar/Electronic/Electronic",
-				//"iconPath": "static/api.png",
-				//"selectedIconPath": "static/apiHL.png",
+		"list": [
+			{
+				"pagePath": "pages/tabBar/websocket/websocket",
 				"text": "电子分货系统"
 			}
 		]
